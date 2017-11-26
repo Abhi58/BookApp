@@ -1,0 +1,17 @@
+
+
+    <div id="search-component" >
+
+          <div class="inner-addon right-addon">
+              <i class="glyphicon glyphicon-search"></i>
+              <input #searchBox type="text" id="search-box"  placeholder="Search Here.." (keyup)="search(searchBox.value)" />
+            </div>
+     
+      <div>
+        <div *ngFor="let hero of heroes | async"
+             (click)="gotoDetail(hero)" class="search-result" >
+          {{hero.name}}
+        </div>
+      </div>
+    </div>
+

@@ -1,0 +1,84 @@
+<div class="pad">
+<head>
+  <link stylesheet="heroes.component.css" rel="stylesheet">
+</head>
+
+<div *ngIf="!addValue">
+
+<a (click)="addHero()" style="float:right; margin-top:60px">Add a Book</a>
+</div>
+<div *ngIf="addValue">
+
+   <br>
+  <h3 style="text-align: center; color:#337ab7">Add a New Book to your bucket</h3>
+  <br>
+   <label>Title : </label>
+   <input #heroName placeholder="Enter the title here"/>
+   <br>
+   <label>Author : </label>
+   <input #heroAuthor placeholder="Name of the Author" />
+   <br>
+   <label>Genre : </label>
+   <input #heroGenre placeholder="Genre of the book" />
+   <br>
+   <label>ISBN : </label>
+   <input #heroIsbn placeholder="ISBN value" />
+   <br>
+   <label>Publication Date : </label>
+   <input #heroPublicationdate placeholder="Date of publication"  />
+   <br>
+   <label>Publisher : </label>
+   <input #heroPublisher placeholder="Name of the publisher"/>
+   <br>
+   <label>Format : </label>
+   <input #heroFormat placeholder="Format of the book" />
+   <br>
+   <label>Price : </label>
+   <input #heroPrice placeholder="Price of the book" />
+  <br>
+
+  <button style="margin-left: 500px;" class="btn btn-primary" (click)="add(heroName.value,heroAuthor.value,heroIsbn.value,heroPublicationdate.value,
+  heroPublisher.value,heroGenre.value,heroPrice.value,heroFormat.value);
+  heroAuthor.value='';heroName.value='';heroIsbn.value='';heroPublicationdate.value='';
+  heroPublisher.value='';heroGenre.value='';heroPrice.value='';heroFormat.value='';">
+    Add
+  </button>
+</div>
+
+<div *ngIf="!addValue">
+  <br>
+  <h2 style="text-align: center;color:#337ab7">My Books</h2>
+  <div *ngFor="let hero of heroes" class="col-sm-4 arr"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)" >
+     <h3 style="text-align: center; color:#337ab7">{{hero.name}}</h3>
+     <br>
+     <div class="info">
+     <p><span style="font-weight: 900">Author</span> : {{hero.author}}</p>
+     <p><span style="font-weight: 900">Genre</span> : {{hero.genre}}</p>
+     <p><span style="font-weight: 900">ISBN</span> : {{hero.isbn}}</p>
+   <div *ngIf="!showless">
+     <p><span style="font-weight: 900">Publication Date</span> : {{hero.publicationdate}}</p>
+     <p><span style="font-weight: 900">Publisher</span> : {{hero.publisher}}</p>
+     <p><span style="font-weight: 900">Format</span> : {{hero.format}}</p>
+     <p><span style="font-weight: 900">Price</span> : {{hero.price}}</p>
+     </div>
+     </div>
+     <a class="show" *ngIf="!showmore" (click)="showLess()">Show less</a>
+     <a class="show" *ngIf="showmore" (click)="showMore()">Show more</a>
+<br>
+     <button class="del btn btn-primary"(click)="gotoDetail()">edit</button>
+
+    <button class="btn btn-primary" (click)="delete(hero); $event.stopPropagation()">delete </button>
+    <br>
+    <br>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+

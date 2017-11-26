@@ -1,0 +1,36 @@
+
+<div *ngIf="hero" class="container">
+  <br>
+  <h3 style="text-align: center; color:#337ab7">{{hero.name}} </h3>
+  <br>
+
+    <label>Name : </label>
+    <input [(ngModel)]="hero.name" placeholder="name" />
+    <br>
+    <label>Author : </label>
+    <input [(ngModel)]="hero.author" placeholder="author"/>
+    <br>
+    <label>Genre : </label>
+    <input [(ngModel)]="hero.genre" placeholder="genre"/>
+    <br>
+    <label>ISBN : </label>
+    <input [(ngModel)]="hero.isbn" placeholder="isbn"/>
+    <br>
+    <label>Publication Date : </label>
+    <input [(ngModel)]="hero.publicationdate" placeholder="publicationdate"/>
+    <br>
+    <label>Publisher : </label>
+    <input [(ngModel)]="hero.publisher" placeholder="publisher"/>
+    <br>
+    <label>Format : </label>
+    <input [(ngModel)]="hero.format" placeholder="format"/>
+    <br>
+    <label>Price : </label>
+    <input [(ngModel)]="hero.price" placeholder="price"/>
+<br>
+    <button class="btn btn-primary" style="margin-left: 500px;" (click)="save()">Save</button>
+    <button class="btn btn-primary"  (click)="goBack()">Back</button>
+
+  </div>
+
+

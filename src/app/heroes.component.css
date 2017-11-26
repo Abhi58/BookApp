@@ -1,0 +1,59 @@
+
+
+.pad{
+  font-family: sans-serif;
+
+}
+
+.arr{
+  /* text-align: center; */
+  border: 0.5px solid #337ab7;
+}
+
+.del{
+  margin-left: 110px;
+}
+
+.show{
+  text-align: center;
+
+}
+
+.info{
+  text-align: center;
+}
+
+label {
+  display: inline-flex;
+  width: 9em;
+  margin-right: 30px;
+  margin-left:300px;
+
+  color: #607D8B;
+  font-weight: bold;
+}
+input {
+  width: 300px;
+  height: 2em;
+  font-size: 1em;
+  padding-left: 0.1em;
+  margin-left: -40px;
+
+}
+button {
+  margin-top: 20px;
+  font-family: Arial;
+
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer; cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+
+  color: #ccc;
+  cursor: auto;
+}
